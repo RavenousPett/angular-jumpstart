@@ -1,15 +1,24 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
-<title>Title of the document</title>
-</head>
+<html ng-app>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+		<title>Using Directives</title>
+	</head>
 
-<body>
+	<body ng-init="name='Richard'">
+		<h1>{{ 1 + 1 }}</h1>
 
-<?php echo 'PHP running'; ?>
+		<div ng-hide="isHidden">
+			<input type="text" ng-model="name"> 
+			<br />{{ name }}
+			<br /><span ng-bind="name"></span>
+		</div>
 
+		<input type="checkbox" ng-model="isHidden">
 
-</body>
+		<button ng-click="name='Michelle'">Change Name</button>
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+	</body>
 
 </html>
