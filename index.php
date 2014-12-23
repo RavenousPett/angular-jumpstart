@@ -19,21 +19,24 @@
 
 			<h1>Customer Data</h1>
 
+			Filter: <input type="text" ng-model="customerFilter.name">
+
 			<div ng-init="customers=[
-				{joined: '2000-12-02', name: 'John', city: 'Chandler', orderTotal: '9.9950'},
-				{joined: '2000-12-02', name: 'Liz', city: 'Chandler', orderTotal: '9.9950'},
-				{joined: '2000-12-02', name: 'David', city: 'Chandler', orderTotal: '9.9950'},
 				{joined: '2000-12-02', name: 'James', city: 'Chandler', orderTotal: '9.9950'},
+				{joined: '2020-12-02', name: 'Liz', city: 'Bournemouth', orderTotal: '8'},
+				{joined: '2010-12-02', name: 'David', city: 'Chandler', orderTotal: '9.9950'},
+				{joined: '2000-12-02', name: 'James', city: 'Alton', orderTotal: '7.20'},
 			]">
 
 				<table>
 					<tr>
-						<td>Name</td>
-						<td>City</td>
-						<td>Order Total</td>
-						<td>Joined</td>
+						<th ng-click="sortBy='name'; reverse=!reverse">Name</th>
+						<th ng-click="sortBy='city'; reverse=!reverse">City</th>
+						<th ng-click="sortBy='orderTotal'; reverse=!reverse">Order Total</th>
+						<th ng-click="sortBy='joined'; reverse=!reverse">Joined</th>
 					</tr>
-					<tr ng-repeat="cust in customers">
+
+					<tr ng-repeat="cust in customers | filter:customerFilter | orderBy:sortBy:reverse" >
 						<td>{{ cust.name | uppercase}}</td>
 						<td>{{ cust.city | lowercase}}</td>
 						<td>{{ cust.orderTotal | currency:'£' }}</td>
