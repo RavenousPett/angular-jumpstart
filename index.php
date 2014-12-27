@@ -21,19 +21,14 @@
 
 			Filter: <input type="text" ng-model="customerFilter.name">
 
-			<div ng-init="customers=[
-				{joined: '2000-12-02', name: 'James', city: 'Chandler', orderTotal: '9.9950'},
-				{joined: '2020-12-02', name: 'Liz', city: 'Bournemouth', orderTotal: '8'},
-				{joined: '2010-12-02', name: 'David', city: 'Chandler', orderTotal: '9.9950'},
-				{joined: '2000-12-02', name: 'James', city: 'Alton', orderTotal: '7.20'},
-			]">
+			<div ng-controller="CustomersController">
 
 				<table>
 					<tr>
-						<th ng-click="sortBy='name'; reverse=!reverse">Name</th>
-						<th ng-click="sortBy='city'; reverse=!reverse">City</th>
-						<th ng-click="sortBy='orderTotal'; reverse=!reverse">Order Total</th>
-						<th ng-click="sortBy='joined'; reverse=!reverse">Joined</th>
+						<th ng-click="doSort('name')">Name</th>
+						<th ng-click="doSort('city')">City</th>
+						<th ng-click="doSort('orderTotal')">Order Total</th>
+						<th ng-click="doSort('joined')">Joined</th>
 					</tr>
 
 					<tr ng-repeat="cust in customers | filter:customerFilter | orderBy:sortBy:reverse" >
@@ -43,6 +38,10 @@
 						<td>{{ cust.joined | date:'dd-mm-yy' }}</td>
 					</tr>
 				</table>
+
+				<br />
+
+				<span>Total customers: {{ customers.length }}</span>
 
 
 			</div>
@@ -114,6 +113,8 @@
 		</div>
 
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+		<script type="text/javascript" src="app/controllers/customersController.js"></script>
+
 	</body>
 
 </html>
