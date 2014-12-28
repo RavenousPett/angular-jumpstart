@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="customersApp">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
 		<title>Using Directives</title>
@@ -113,6 +113,7 @@
 		</div>
 
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+		<script type="text/javascript" src="app/app.js"></script>
 		<script type="text/javascript" src="app/controllers/customersController.js"></script>
 
 	</body>

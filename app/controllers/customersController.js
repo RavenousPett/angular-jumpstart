@@ -1,18 +1,28 @@
-function CustomersController($scope){
+(function(){
 
-    $scope.sortBy = 'name';
-    $scope.reverse = false;
+    var CustomersController = function ($scope) {
 
-    $scope.customers = [
-        {joined: '2000-12-02', name: 'James', city: 'Chandler', orderTotal: '9.9950'},
-        {joined: '2020-12-02', name: 'Liz', city: 'Bournemouth', orderTotal: '8'},
-        {joined: '2010-12-02', name: 'David', city: 'Chandler', orderTotal: '9.9950'},
-        {joined: '2000-12-02', name: 'James', city: 'Alton', orderTotal: '7.20'}
-    ];
+        $scope.sortBy = 'name';
+        $scope.reverse = false;
 
-    $scope.doSort = function(propName){
-        $scope.sortBy = propName;
-        $scope.reverse = !$scope.reverse;
+        $scope.customers = [
+            {joined: '2000-12-02', name: 'James', city: 'Chandler', orderTotal: '9.9950'},
+            {joined: '2020-12-02', name: 'Liz', city: 'Bournemouth', orderTotal: '8'},
+            {joined: '2010-12-02', name: 'David', city: 'Chandler', orderTotal: '9.9950'},
+            {joined: '2000-12-02', name: 'James', city: 'Alton', orderTotal: '7.20'}
+        ];
+
+        $scope.doSort = function (propName) {
+            $scope.sortBy = propName;
+            $scope.reverse = !$scope.reverse;
+        }
+
     }
 
-}
+    angular.module('customersApp').controller('CustomersController', CustomersController);
+
+
+}());
+
+
+
