@@ -7,6 +7,7 @@
 
         function init(){
 
+            // Serach the customers for the customerID
             $scope.customer = customersFactory.getCustomer(customerId);
 
         } 
