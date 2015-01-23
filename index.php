@@ -20,6 +20,7 @@
 		<script type="text/javascript" src="app/controllers/customersController.js"></script>
 		<script type="text/javascript" src="app/controllers/ordersController.js"></script>
 		<script type="text/javascript" src="app/services/customersFactory.js"></script>
+		<script type="text/javascript" src="app/services/customersService.js"></script>
 
 	</body>
 
