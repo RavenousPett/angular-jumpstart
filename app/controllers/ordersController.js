@@ -7,8 +7,17 @@
 
         function init(){
 
-            // Serach the customers for the customerID
-            $scope.customer = customersFactory.getCustomer(customerId);
+            customersFactory.getCustomer(customerId)
+                .success(function(customer){
+
+                    $scope.customers = customer;  
+                                      
+                })
+                .errors(function(data, status, headers, config){
+
+                    // handle error
+
+                });
 
         } 
         
