@@ -13,7 +13,7 @@
                     $scope.customers = customers;  
 
                 })
-                .errors(function(data, status, headers, config){
+                .error(function(data, status, headers, config){
 
                     // handle error
 
