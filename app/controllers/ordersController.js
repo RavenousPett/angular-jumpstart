@@ -1,6 +1,6 @@
 (function() {
     
-    var OrdersController = function ($scope, $routeParams, customersFactory) {
+    var OrdersController = function ($scope, $log, $routeParams, customersFactory) {
 
         var customerId = $routeParams.customerId;
         $scope.customer = null;
@@ -15,7 +15,7 @@
                 })
                 .error(function(data, status, headers, config){
 
-
+                    $log.log(data.error + " " + status);
 
                 });
 
@@ -25,7 +25,7 @@
 
     };
     
-    OrdersController.$inject = ['$scope', '$routeParams', 'customersFactory'];
+    OrdersController.$inject = ['$scope', '$log', '$routeParams', 'customersFactory'];
 
     angular.module('customersApp')
       .controller('OrdersController', OrdersController);
