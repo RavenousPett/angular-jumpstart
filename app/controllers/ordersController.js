@@ -10,12 +10,12 @@
             customersFactory.getCustomer(customerId)
                 .success(function(customer){
 
-                    $scope.customers = customer;  
+                    $scope.customer = customer;  
                                       
                 })
-                .errors(function(data, status, headers, config){
+                .error(function(data, status, headers, config){
 
-                    // handle error
+
 
                 });
 

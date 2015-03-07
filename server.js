@@ -9,7 +9,7 @@ var express = require('express'),
 //Express 4
 app.use(express.static(__dirname, '/'));
 
-app.get('/customers/:id', function(req, res) {
+app.get('/customer/:id', function(req, res) {
     var customerId = parseInt(req.params.id);
     var data = {};
     for (var i=0,len=customers.length;i<len;i++) {
@@ -18,11 +18,16 @@ app.get('/customers/:id', function(req, res) {
            break;
         }
     }  
+    
+    res.header("Access-Control-Allow-Origin", "*");
     res.json(data);
 });
 
 app.get('/customers', function(req, res) {
+    
+    res.header("Access-Control-Allow-Origin", "*");
     res.json(customers);
+
     //res.json(500, { error: 'An error has occurred!' });
 });
 
@@ -35,6 +40,7 @@ app.get('/orders', function(req, res) {
             }
         }
     }  
+    res.header("Access-Control-Allow-Origin", "*");
     res.json(orders);
 });
 
@@ -48,6 +54,7 @@ app.delete('/customers/:id', function(req, res) {
            break;
         }
     }  
+    res.header("Access-Control-Allow-Origin", "*");
     res.json(data);
 });
 

@@ -12,7 +12,7 @@
 
         factory.getCustomer = function(customerId){
 
-            return $http.get('http://localhost:8080/customers/' + customerId);
+            return $http.get('http://localhost:8080/customer/' + customerId);
 
         }
 
