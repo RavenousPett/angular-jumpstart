@@ -5,12 +5,13 @@
 		<title>Using Directives</title>
 
 		<!-- Css -->
+		<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
 
 	<header>
-        <nav>
-            <ul>
+        <nav class="navbar navbar-default">
+            <ul class="nav navbar-nav">
                 <li><a href="#/customers">Customers</a></li>
                 <li><a href="#/orders">Orders</a></li>
             </ul>

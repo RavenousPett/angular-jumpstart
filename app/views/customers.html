@@ -9,12 +9,13 @@
         <h1>Customers</h1>
 
 
-        <table>
+        <table class="table table-striped">
             <tr>
                 <th ng-click="doSort('name')">Name</th>
                 <th ng-click="doSort('city')">City</th>
                 <th ng-click="doSort('orderTotal')">Order Total</th>
                 <th ng-click="doSort('joined')">Joined</th>
+                <th>Orders</th>
                 <th>&nbsp;</th>
             </tr>
 
@@ -24,6 +25,8 @@
                 <td>{{ cust.orderTotal | currency:'£' }}</td>
                 <td>{{ cust.joined | date:'dd-mm-yy' }}</td>
                 <td><a href="#/orders/{{ cust.id }}">View Orders</a></td>
+                <td class="center"><span class="glyphicon glyphicon-remove delete" ng-click="deleteCustomer(cust.id)"></span></td>
+
             </tr>
         </table>
 
