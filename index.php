@@ -26,6 +26,7 @@
 		<script type="text/javascript" src="scripts/angular.js"></script>
 		<!--	ngRoute	-->
 		<script type="text/javascript" src="scripts/angular-route.js"></script>
+		<script type="text/javascript" src="scripts/angular-animate.js"></script>
 		<script type="text/javascript" src="app/app.js"></script>
 		<script type="text/javascript" src="app/controllers/customersController.js"></script>
 		<script type="text/javascript" src="app/controllers/ordersController.js"></script>
